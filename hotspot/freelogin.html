@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>WiFi | Mundored</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="fonts/Montserrat.css" rel="stylesheet" type="text/css">
+				
+		<!-- Script para mostrar anuncios aleatoreos -->
+		<script type="text/javascript">
+			// place your images in this array
+			var random_images_array = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', '13.png'];
+				
+			function getRandomImage(imgAr, path) {
+				path = path || 'images/'; // default path here
+				var num = Math.floor( Math.random() * imgAr.length );
+				var img = imgAr[ num ];
+				var imgStr = '<img src="' + path + img + '" alt = "">';
+				document.write(imgStr); document.close();
+			}
+		</script>
+		
+		<!-- Script para mostrar link free wifi -->
+		<script>
+			$(document).ready(function () {
+			var counter = 15;
+			var id = setInterval(function() {
+			   counter--;
+			   if(counter > 0) {
+					var msg = 'Internet gratis disponible en ' + counter + ' segundos';
+					$('#wait').text(msg);
+			   } else {
+					$('#wait').hide();
+					$('#freelink').show();
+					clearInterval(id);
+			  }
+			}, 1000);
+			});
+		</script>	
+	
+	</head>
+	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+		$(if chap-id)
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+		
+		<script type="text/javascript" src="/md5.js"></script>
+		<script type="text/javascript">
+		<!--
+		function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+		}
+		//-->
+		</script>
+		$(endif)
+		
+		<!-- Nav (Menu Section) -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<!-- <a class="navbar-brand" href="#myPage">5 Conectado</a> -->
+					
+					<!-- <div class="panel-heading"> -->
+                            <!-- <iframe src="info.html" style="width:200px; height:20px; margin:0px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="2"></iframe> -->
+                    <!-- </div> -->
+					
+					<a class="navbar-brand" href="#myPage"><iframe src="info.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="2"></iframe></a>
+					
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#precios">PRECIOS</a></li>
+						<li><a href="#portfolio">VENTA</a></li>
+						<li><a href="#services">SERVICIOS</a></li>
+						<li><a href="#about">INFO</a></li>
+						<li><a href="#contact">USUARIOS</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Container (Login Section) -->
+		
+		<div class="areaTop noMain text-center free-login">
+			<!-- <span class="logo-main"><img src="img/icon-wifi.png"></img></span> <!-- Linea para logo img////Activar si desea utilizar un logo en formato PNG -->
+			<!-- <span class="icon-signal logo-mid"></span> -->
+			<!-- <h1>Bienvenido a nuestra Red WiFi de Ciberinter</h1> -->
+			<!-- <p>Acceso a Internet fácil, rapido y económico mediante <span class="fichas">tickets</span> de Prepago. Adquiere tu ticket y empieza a navegar en Internet.</p> -->
+			<!-- <p>Solo compra tu ficha en cualquiera de nuestros <span class="puntos">punto de venta</span> y empieza a nevagar en Internet.</p> -->
+			
+			<!-- <form class="form-inline" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)> -->
+				<!-- <input type="hidden" name="dst" value="$(link-orig)" /> -->
+				<!-- <input type="hidden" name="popup" value="true" /> -->
+				<!-- $(if error)<p class="errormsg">$(error)</p>$(endif) -->
+				<!-- <input type="text" id="codigo" class="form-control" name="username" placeholder="Ingresar codigo aqui..." autocomplete="off" required> -->
+				<!-- <button type="submit" class="btn btn-danger">Conectarse</button> -->
+			<!-- </form> -->
+			
+			<!-- <h1>Anuncio publicitario</h1> -->
+			<p>Acceso gratuito patrocinado por Mundored. Espere...</p>
+			
+			<div class="anuncios">
+				<!-- DIV para mostrar anuncios aleatoreos -->
+				<script type="text/javascript">getRandomImage(random_images_array, 'images/')</script>
+			</div>
+						
+			<div class="freewifi">
+				$(if trial == 'yes')
+				<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" id="freelink" class="btn btn-success" style="display: none">Prueba gratis ahora</a>
+				<p id="wait">Internet gratis disponible en 15 segundos</p>
+				$(endif)
+			</div>
+			
+			<div class="link-register">
+				<a href="#contact">Acceso Usuarios Registrados</a>
+			</div>
+			<div class="link-register">
+				<a href="#precios">Precio de cada ticket</a>
+			</div>
+			<div class="link-register">
+				<a href="#portfolio">Puntos de venta</a>
+			</div>
+		</div>
+			
+		<!-- Container (Portfolio Section) -->
+		<div id="precios" class="container-fluid bg-grey">
+			<div class="text-center">
+				<h2>Precios</h2>
+				<h4>Escoge un plan que se adapte a tus necesidades de conexión</h4>
+			</div>
+			<div class="row slideanim">
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default text-center">
+						<div class="panel-heading-2">
+							<h1><span class="ticket"><img src="img/blanco.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket Blanco</p>
+							<p>Duración: <strong>3 hora</strong></p>
+							<p>Velocidad: <strong>3 Mb/s</strong></p>
+							<p>Caducidad: <strong>Nunca</strong></p>
+							<p>MB: <strong>Ilimitado</strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$12</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default2 text-center">
+						<div class="panel-heading-2">
+							<h1><span class="ticket"><img src="img/azul.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket Azul</p>
+							<p>Duración: <strong>1 Dia</strong></p>
+							<p>Velocidad: <strong>2 Mb/s</strong></p>
+							<p>Caducidad: <strong>Nunca</strong></p>
+							<p>MB: <strong>Ilimitado</strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$20</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default3 text-center">
+						<div class="panel-heading-3">
+							<h1><span class="ticket"><img src="img/verde.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket Verde</p>
+							<p>Duración: <strong>15 Dias</strong></p>
+							<p>Velocidad: <strong>2 Mb/s</strong></p>
+							<p>Caducidad: <strong>Nunca</strong></p>
+							<p>MB: <strong>Ilimitado</strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$60</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default4 text-center">
+						<div class="panel-heading-4">
+							<h1><span class="ticket"><img src="img/rojo.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket Rojo</p>
+							<p>Duración: <strong>30 Dias</strong></p>
+							<p>Velocidad: <strong>2 Mb/s</strong></p>
+							<p><strong></strong></p>
+							<p><strong></strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$100</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- FOOTER -->
+		<footer class="container-fluid text-center bg-grey">
+			<a href="#myPage" title="To Top">
+				<span class="icon-up-open-1"></span>
+			</a>
+			<p><span lang="es-mx">Mundored</span></p>
+			<div class="col-sm-12">
+				<p><span class="icon-location"></span>Valle de bravo, Mexico,
+				<span lang="es-mx">Mexico</span></p>
+				<p><span class="icon-mobile"></span> +52 123 4567 12<span lang="es-mx">5</span></p>
+				<p><span class="icon-mail-alt"></span> wifimexico2017@gmail.com</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			$(".navbar a, footer a, div a, a[href='#myPage']").on('click', function(event) {
+			if (this.hash !== "") {
+			  event.preventDefault();
+			  var hash = this.hash;
+			  $('html, body').animate({
+				scrollTop: $(hash).offset().top
+			  }, 900, function(){
+			  window.location.hash = hash;
+			  });
+			}
+		  });
+		  
+		  $(window).scroll(function() {
+			$(".slideanim").each(function(){
+			  var pos = $(this).offset().top;
+
+			  var winTop = $(window).scrollTop();
+				if (pos < winTop + 600) {
+				  $(this).addClass("slide");
+				}
+			});
+		  });
+		})
+			</script>
+	</body>
+</html>

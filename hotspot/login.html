@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>WiFi | Login</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="fonts/Montserrat.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+			// place your images in this array
+			var random_images_array = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png', '12.png', '13.png'];
+		
+			function getRandomImage(imgAr, path) {
+				path = path || 'images/'; // default path here
+				var num = Math.floor( Math.random() * imgAr.length );
+				var img = imgAr[ num ];
+				var imgStr = '<img src="' + path + img + '" alt = "">';
+				document.write(imgStr); document.close();
+			}
+		</script>
+	</head>
+	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+		$(if chap-id)
+		<form name="sendin" action="$(link-login-only)" method="post">
+			<input type="hidden" name="username" />
+			<input type="hidden" name="password" />
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
+		</form>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6735392885160788",
+    enable_page_level_ads: true
+  });
+</script>
+</script>
+		<script type="text/javascript" src="/md5.js"></script>
+		<script type="text/javascript">
+		<!--
+		function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+		}
+		//-->
+		</script>
+		$(endif)
+		
+		<!-- Popup Anuncio -->
+		<input type="checkbox" id="cerrar">
+		<label for="cerrar" id="btn-cerra">Cerrar</label>
+		<div class="modal">
+			<div class="anuncios">
+				<h1>Publicidad</h1>
+				<!-- <p>Acceso gratuito patrocinado por el sigueinte anuncio. Espere...</p> -->
+				<script type="text/javascript">getRandomImage(random_images_array, 'images/')</script>
+			</div>
+		</div>
+		
+		<!-- Nav (Menu Section) -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#myPage">Login hotspot</a>			
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li data-toggle="collapse" data-target=".in"><a href="#precios">PRECIOS</a></li>
+						<li data-toggle="collapse" data-target=".in"><a href="#portfolio">VENTA</a></li>
+						<li data-toggle="collapse" data-target=".in"><a href="#services">SERVICIOS</a></li>
+						<li data-toggle="collapse" data-target=".in"><a href="#about">INFO</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Slider Info Services -->
+		<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+			
+			<!-- Wrapper for slides texto-->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<h4>"MultiRecargas desde $10.00, $20.00, $50.00, $80.00 y $100.00"<br></h4>
+				</div>
+				<div class="item">
+					<h4>"Ticket WiFi de $8, $12, $20, $40, $60 y $100.00. Mas informacion en..."<br></h4>
+				</div>
+				<div class="item">
+					<h4>"Horario fijo de 8 AM a 9:30 PM todos los días de la semana"<br></h4>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Container (Login Section) -->
+		<div class="areaTop text-center">
+			<span class="logo-main"><img src="img/icon-wifi.png"></img></span>
+			<h1>Bienvenido a Mundored</h1>
+			<form class="form-inline" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+				<input type="hidden" name="dst" value="$(link-orig)" />
+				<input type="hidden" name="popup" value="true" />
+				$(if error)
+					<p class="errormsg">$(error)</p>
+				$(endif)
+				<input type="text" class="form-control" size="20" name="username" placeholder="ingresar usuario aqui" autocomplete="off" required>
+				<input type="password" class="form-control" size="20" name="password"  placeholder="ingresar contraseña aqui" autocomplete="off" required>
+				<button type="submit" class="btn btn-danger">Conectarse</button>
+			</form>
+			<div class="freewifi">
+				$(if trial == 'yes')
+				<a class="btn btn-success" href="freelogin.html">Prueba Gratis</a>
+				$(endif)
+			</div>
+			<br/>
+			<div class="link-register">
+				<a href="#precios">Fichas disponibles</a>
+			</div>
+			<div class="link-register">
+				<a href="#portfolio">Puntos de venta</a>
+			</div>
+		</div>
+			
+		<!-- Container (Portfolio Section) -->
+		<div id="precios" class="container-fluid bg-grey">
+			<div class="text-center">
+				<h2>Precios</h2>
+				<h4>Escoge un plan que se adapte a tus necesidades de conexión</h4>
+			</div>
+			<div class="row slideanim">
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default text-center">
+						<div class="panel-heading-2">
+							<h1><span class="ticket"><img src="img/blanco.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket 3 Horas</p>
+							<p>Duración: <strong>3 hora</strong></p>
+							<p>Velocidad: <strong>1.5 Mb/s</strong></p>
+							<p><strong></strong></p>
+							<p>MB: <strong>Ilimitado</strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$12</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default2 text-center">
+						<div class="panel-heading-2">
+							<h1><span class="ticket"><img src="img/azul.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket 1 Dia</p>
+							<p>Duración: <strong>1 Dia</strong></p>
+							<p>Velocidad: <strong>2 Mb/s</strong></p>
+							<p><strong></strong></p>
+							<p>MB: <strong>Ilimitado</strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$20</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default3 text-center">
+						<div class="panel-heading-3">
+							<h1><span class="ticket"><img src="img/verde.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket 15 Dias</p>
+							<p>Duración: <strong>15 Dias</strong></p>
+							<p>Velocidad: <strong>2 Mb/s</strong></p>
+							<p><strong></strong></p>
+							<p>MB: <strong>Ilimitado</strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$60</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-12">
+					<div class="panel panel-default4 text-center">
+						<div class="panel-heading-4">
+							<h1><span class="ticket"><img src="img/rojo.png"></img></span></h1>
+						</div>
+						<div class="panel-body">
+							<p>Ticket 1 Mes</p>
+							<p>Duración: <strong>30 días</strong></p>
+							<p>Velocidad: <strong>2.5 Mb/s</strong></p>
+							<p><strong></strong></p>
+							<p>MB: <strong>Ilimitado</strong></p>
+							<p><strong></strong></p>
+						</div>
+						<div class="panel-footer">
+							<h3>$100</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Container (Portfolio Section) -->
+		<div id="portfolio" class="container-fluid text-center">
+			<h2>Puntos de venta</h2>
+			<h4>Adquiere tu ficha en cualquiera de nuestros puntos de venta. Las fichas funcionan en cualquier señal "Wifimexico"</h4>
+			<div class="row text-center slideanim">
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="img/p1.png" width="400" height="300">
+						<p><strong>Wifimexico</strong></p>
+						<p>Valle de Bravo</p>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="img/p2.png" alt="New York" width="400" height="300">
+						<p><strong>Mundored</strong></p>
+						<p></p>
+					</div>
+				</div>
+				<!-- <div class="col-sm-4"> -->
+					<!-- <div class="thumbnail"> -->
+						<!-- <img src="sanfran.jpg" alt="San Francisco" width="400" height="300"> -->
+						<!-- <p><strong>San Francisco</strong></p> -->
+						<!-- <p>Yes, San Fran is ours</p> -->
+					<!-- </div> -->
+				<!-- </div> -->
+			</div>
+		</div>
+
+
+		<!-- Container (Services Section) -->
+		<div id="services" class="container-fluid text-center bg-grey">
+			<h2>SERVICIOS</h2>
+			<h4>Algunos servicios de MiNegocio</h4>
+			<br>
+			<div class="row slideanim">
+				<div class="col-sm-4">
+					<span class="icon-signal logo-small"></span>
+					<h4 class="text-service"><strong>WIFI</strong></h4>
+					<p>Venta de Internet WiFi</p>
+				</div>
+				<div class="col-sm-4">
+					<span class="icon-print logo-small"></span>
+					<h4 class="text-service"><strong>IMPRESIONES</strong></h4>
+					<p>Color y Blanco/Negro</p>
+				</div>
+				<div class="col-sm-4">
+					<span class="icon-docs logo-small"></span>
+					<h4 class="text-service"><strong>COPIAS</strong></h4>
+					<p>Servicio de copias $1 peso</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="row slideanim">
+				<div class="col-sm-4">
+					<span class="icon-desktop logo-small"></span>
+					<h4 class="text-service"><strong>CIBER</strong></h4>
+					<p>Servicio de Ciber</p>
+				</div>
+				<div class="col-sm-4">
+					<span class="icon-windows logo-small"></span>
+					<h4 class="text-service"><strong>FORMATEO</strong></h4>
+					<p>Instalacion de S.O</p>
+				</div>
+				<div class="col-sm-4">
+					<span class="icon-download logo-small"></span>
+					<h4 class="text-service"><strong>DESCARGAS</strong></h4>
+					<p>Descarga de Musicas y Peliculas</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Container (About Section) -->
+		<div id="about" class="container-fluid text-center">
+			<div class="row">
+				<div class="col-sm-8">
+					<h2>¿Cómo funciona el acceso a Internet?</h2><br>
+					<h4><strong>Conección:</strong> Para conectarse a Internet en nuestra red solo debe adquirir cualquiera de nuestros tickets e ingresar el código en este portal y tendrá Internet en su dispositivo de manera instantánea. No necesita suscripción ni renta mensual, mientras usted pueda ver esta página en su dispositivo significa que puede conectarse a Internet.</h4>
+					<h4><strong>Tickets:</strong> Cada ticket trae un código único que funciona para un solo dispositivo y dependiendo del ticket que adquiera, ésta tendrá asignado la velocidad de navegación, el tiempo de conexión y en algunos casos la cuota de descarga. El sistema que genera y almacena cada ticket no da cabida a errores por lo que ningún ticket puede salir fallado.</h4>
+				</div>
+				<div class="col-sm-4">
+					<span class="slideanim"><img src="img/tickets.png"></img></span>
+				</div>
+			</div>
+		</div>
+			
+		<div class="container-fluid text-center bg-grey">
+			<div class="row">
+				<div class="col-sm-4">
+					<span class="slideanim"><img src="img/logo.png"></img></span>
+				</div>
+				<div class="col-sm-8">
+					<h2>Acerca de MiNegocio</h2><br>
+					<h4>Si usted desea implementar un punto de venta de WiFi puede contactarnos en MiNegocio, realizamos venta de equipo, renta y por comision.</h4>
+					<h4>A través de nuestro servicio de WIFI, usted puede disfrutar de todas las ventajas que le ofrece nuestra conexión, con la comodidad de utilizarlo en el lugar de su domicilio que usted elija. A través de un sistema inalámbrico, usted puede organizar su propia red, conectando todos sus equipos y disfrutando de la seguridad y el confort de su hogar.</h4>
+				</div>
+			</div>
+		</div>
+
+		<footer class="container-fluid text-center">
+			<a href="#myPage" title="To Top">
+				<span class="icon-up-open-1"></span>
+			</a>
+			<p>MiNegocio 2017</p>
+			<div class="col-sm-12">
+				<p><span class="icon-location"></span>Direccion, Conocido, México</p>
+				<p><span class="icon-mobile"></span></p>
+				<p><span class="icon-mail-alt"></span> wifimexico2017@gmail.com</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			$(".navbar a, footer a, div a, a[href='#myPage']").on('click', function(event) {
+			if (this.hash !== "") {
+			  event.preventDefault();
+			  var hash = this.hash;
+			  $('html, body').animate({
+				scrollTop: $(hash).offset().top
+			  }, 1200, function(){
+			  window.location.hash = hash;
+			  });
+			}
+		  });
+		  
+		  $(window).scroll(function() {
+			$(".slideanim").each(function(){
+			  var pos = $(this).offset().top;
+
+			  var winTop = $(window).scrollTop();
+				if (pos < winTop + 600) {
+				  $(this).addClass("slide");
+				}
+			});
+		  });
+		})
+			</script>
+	</body>
+</html>

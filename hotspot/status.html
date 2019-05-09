@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		$(if refresh-timeout)
+		<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+		$(endif)
+		<title>WiFi | Status</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="fonts/Montserrat.css" rel="stylesheet" type="text/css">
+		<link href="fonts/Lato.css" rel="stylesheet" type="text/css">
+		<script language="JavaScript">
+			<!--
+			$(if advert-pending == 'yes')
+				var popup = '';
+				function focusAdvert() {
+				if (window.focus) popup.focus();
+				}
+				function openAdvert() {
+				popup = open('$(link-advert)', 'hotspot_advert', '');
+				setTimeout("focusAdvert()", 1000);
+				}
+			$(endif)
+				function openLogout() {
+				if (window.name != 'hotspot_status') return true;
+					open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+				window.close();
+				return false;
+				}
+			//-->
+		</script>
+	</head>
+	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+		<!-- MENU -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#myPage">Status de conexion</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#precios">PRECIOS</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- STATUS -->
+		<div class="areaTop noMain text-center">
+			<span class="logo-sec"><img src="img/conect.png"></img></span>
+			<h1>Conectado</h1>
+			<!-- <p class="fbtext">Compartenos con tus amigos en Facebook</p> -->
+			<!-- <div class="fb-like" data-href="https://www.facebook.com/wifimexico2018/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div> -->
+		  	<div class="panel-body tstatus">
+				<div class="table-responsive">
+					<table class="table table-striped" style="text-align:left">
+						<tbody>
+							$(if login-by == 'trial')
+							<tr>
+								<td>
+									Usuario:
+								</td>
+								<td>
+									Demo Gratis
+								</td>
+							</tr>
+							$(elif login-by != 'mac')
+							<tr>
+								<td>
+									Usuario:
+								</td>
+								<td>
+									$(username)
+								</td>
+							</tr>
+							$(endif)
+							$(if session-time-left)
+							<tr>
+								<td>
+									Tiempo restante:
+								</td>
+								<td>
+									<span class="rem-time">$(session-time-left)</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Conectado hace:
+								</td>
+								<td>
+									$(uptime)
+								</td>
+							</tr>
+							$(else)
+							<tr>
+								<td>
+									Conectado hace:
+								</td>
+								<td>
+									$(uptime)
+								</td>
+							</tr>
+							$(endif)
+							<tr>
+								<td>
+									Datos utilizados:
+								</td>
+								<td>
+									$(bytes-out-nice)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Datos restantes:
+								</td>
+								<td>
+									$(remain-bytes-total-nice)
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>						
+			</div>
+			<div class="link-social">
+				<h3>Acceso rapido a paginas web</h3>
+				<a class="btn btn-social btn-facebook" href="https://www.facebook.com/wifimexico2018/" target="_blank">Facebook</a>
+				<a class="btn btn-social btn-google" href="https://www.google.com" target="_blank">Google</a>
+				<a class="btn btn-social btn-youtube" href="https://www.youtube.com" target="_blank">Yotube</a>
+			</div>
+			<form class="form-desconect" action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+				<p>Recuerde desconectarse para conservar su tiempo restante</p>
+				<button type="submit" class="btn btn-danger-red">Desconectarse</button>
+			</form>
+		</div>
+
+		<footer class="container-fluid text-center">
+			<a href="#myPage" title="To Top">
+				<span class="icon-up-open-1"></span>
+			</a>
+			<p>MiNegocio 2017</p>
+			<div class="col-sm-12">
+				<p><span class="icon-location"></span>Direccion, Conocido, México</p>
+				<p><span class="icon-mobile"></span></p>
+				<p><span class="icon-mail-alt"></span> wifimexico2017@gmail.com</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			$(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+			if (this.hash !== "") {
+			  event.preventDefault();
+			  var hash = this.hash;
+			  $('html, body').animate({
+				scrollTop: $(hash).offset().top
+			  }, 900, function(){
+			  window.location.hash = hash;
+			  });
+			}
+			});
+		  
+			$(window).scroll(function() {
+			$(".slideanim").each(function(){
+			  var pos = $(this).offset().top;
+
+			  var winTop = $(window).scrollTop();
+				if (pos < winTop + 600) {
+				  $(this).addClass("slide");
+				}
+			});
+			});
+			})
+		</script>
+	</body>
+</html>
