@@ -1,0 +1,2 @@
+# hotspot
+free internet
